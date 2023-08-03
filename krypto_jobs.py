@@ -92,28 +92,28 @@ from crypto_wallet import generate_account, get_balance, send_transaction
 candidate_database = {
     "Lane": [
         "Lane",
-        "0x6256E4FAff27efA67187952100D0Cc50e16adC15",
+        "0xCFA9A9b2ecf97196c514FF28962E7162E67F53D6",
         "4.3",
         0.24,
         "Images/lane.jpeg",
     ],
     "Ash": [
         "Ash",
-        "0x835b70E804edd05385d320a51AF062306c124093",
+        "0x8b38f19B3c7832Eda2887033A9499E6A45De24F1",
         "5.0",
         0.32,
         "Images/ash.jpeg",
     ],
     "Jo": [
         "Jo",
-        "0xc391e58ce2b7a2d3C3c4F5B65fB3643FEe867169",
+        "0xC6EC0679977B1261C89748724265709CA31B27E1",
         "4.7",
         0.28,
         "Images/jo.jpeg",
     ],
     "Kendall": [
         "Kendall",
-        "0x76be8a3233F41eaF66041BD251002e4b1Ed69e10",
+        "0x8F1F33f4b823b3E00D6076027722DC00a1E6475f",
         "4.1",
         0.17,
         "Images/kendall.jpeg",
@@ -128,10 +128,11 @@ def get_people():
     """Display the database of KryptoJobs2Go candidate information."""
     db_list = list(candidate_database.values())
 
-    col_idx = 0
-    cols = st.columns(4)
+    col_idx = 1
+    cols = st.columns([1,5,1,5,1,5,1,5,1])
 
     for number in range(len(people)):
+
         with cols[col_idx]:
             st.image(db_list[number][4], width=200)
             st.write("Name: ", db_list[number][0])
@@ -139,8 +140,9 @@ def get_people():
             st.write("KryptoJobs2Go Rating: ", db_list[number][2])
             st.write("Hourly Rate per Ether: ", db_list[number][3], "eth")
             st.text(" \n")
-            # if number % 2:
-            col_idx += 1
+            st.write(f"number:{number}, col_idx:{col_idx}")
+
+            col_idx += 2
 
 
 ################################################################################

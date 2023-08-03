@@ -50,7 +50,8 @@ def get_balance(w3, address):
     return ether
 
     """_summary_
-
+        Send the blockchain transaction from the users account to the
+        hired professional:
     """
 def send_transaction(w3, account, to, wage):
     """Send an authorized transaction to the Ganache blockchain."""
